@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AutoservisRKSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AutorizacijskiToken">
+    <Key>
+      <PropertyRef Name="AutorizacijskiTokenID" />
+    </Key>
+    <Property Name="AutorizacijskiTokenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vrijednost" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KlijentID" Type="Int32" />
+    <Property Name="VrijemeEvidentiranja" Type="DateTime" Precision="3" />
+    <Property Name="IpAdresa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceInfo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Klijenti" Relationship="Self.FK_AutorizacijskiToken_Klijenti" FromRole="AutorizacijskiToken" ToRole="Klijenti" />
+  </EntityType>
+  <EntityType Name="Klijenti">
+    <Key>
+      <PropertyRef Name="KlijentID" />
+    </Key>
+    <Property Name="KlijentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LozinkaSalt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LozinkaHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AutorizacijskiToken" Relationship="Self.FK_AutorizacijskiToken_Klijenti" FromRole="Klijenti" ToRole="AutorizacijskiToken" />
+    <NavigationProperty Name="Upiti" Relationship="Self.FK_Upiti_Klijenti" FromRole="Klijenti" ToRole="Upiti" />
+  </EntityType>
+  <EntityType Name="Ponude">
+    <Key>
+      <PropertyRef Name="PonudaID" />
+    </Key>
+    <Property Name="PonudaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarkaAuta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cijena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DatumPocetka" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DatumZavrsetka" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Prihvacen" Type="Boolean" />
+    <Property Name="Odgovoren" Type="Boolean" />
+    <Property Name="UpitID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Upiti" Relationship="Self.FK_Ponude_Upiti" FromRole="Ponude" ToRole="Upiti" />
+  </EntityType>
+  <EntityType Name="Upiti">
+    <Key>
+      <PropertyRef Name="UpitID" />
+    </Key>
+    <Property Name="UpitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarkaAuta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PodaciOMotoru" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OpisKvara" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KlijentID" Type="Int32" Nullable="false" />
+    <Property Name="DatumSlanja" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Klijenti" Relationship="Self.FK_Upiti_Klijenti" FromRole="Upiti" ToRole="Klijenti" />
+    <NavigationProperty Name="Ponude" Relationship="Self.FK_Ponude_Upiti" FromRole="Upiti" ToRole="Ponude" />
+  </EntityType>
+  <Association Name="FK_AutorizacijskiToken_Klijenti">
+    <End Role="Klijenti" Type="Self.Klijenti" Multiplicity="0..1" />
+    <End Role="AutorizacijskiToken" Type="Self.AutorizacijskiToken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijenti">
+        <PropertyRef Name="KlijentID" />
+      </Principal>
+      <Dependent Role="AutorizacijskiToken">
+        <PropertyRef Name="KlijentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Upiti_Klijenti">
+    <End Role="Klijenti" Type="Self.Klijenti" Multiplicity="1" />
+    <End Role="Upiti" Type="Self.Upiti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijenti">
+        <PropertyRef Name="KlijentID" />
+      </Principal>
+      <Dependent Role="Upiti">
+        <PropertyRef Name="KlijentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ponude_Upiti">
+    <End Role="Upiti" Type="Self.Upiti" Multiplicity="1" />
+    <End Role="Ponude" Type="Self.Ponude" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Upiti">
+        <PropertyRef Name="UpitID" />
+      </Principal>
+      <Dependent Role="Ponude">
+        <PropertyRef Name="UpitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AutoservisRKSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AutorizacijskiToken" EntityType="Self.AutorizacijskiToken" />
+    <EntitySet Name="Klijenti" EntityType="Self.Klijenti" />
+    <EntitySet Name="Ponude" EntityType="Self.Ponude" />
+    <EntitySet Name="Upiti" EntityType="Self.Upiti" />
+    <AssociationSet Name="FK_AutorizacijskiToken_Klijenti" Association="Self.FK_AutorizacijskiToken_Klijenti">
+      <End Role="Klijenti" EntitySet="Klijenti" />
+      <End Role="AutorizacijskiToken" EntitySet="AutorizacijskiToken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Upiti_Klijenti" Association="Self.FK_Upiti_Klijenti">
+      <End Role="Klijenti" EntitySet="Klijenti" />
+      <End Role="Upiti" EntitySet="Upiti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ponude_Upiti" Association="Self.FK_Ponude_Upiti">
+      <End Role="Upiti" EntitySet="Upiti" />
+      <End Role="Ponude" EntitySet="Ponude" />
+    </AssociationSet>
+    <FunctionImport Name="GetTokenPoVrijednosti" EntitySet="AutorizacijskiToken" ReturnType="Collection(AutoservisRKSModel.AutorizacijskiToken)">
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

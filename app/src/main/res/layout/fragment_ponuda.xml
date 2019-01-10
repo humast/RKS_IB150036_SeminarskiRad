@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/ic_question_answer_black_24dp"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+
+    <ImageView
+        android:id="@+id/imageViewMarkaAuta"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:layout_alignBottom="@+id/MarkaAutaTxtP"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        app:srcCompat="@drawable/ic_directions_car_black_24dp" />
+
+        <TextView
+            android:id="@+id/MarkaAutaTxtP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="100dp"
+            android:text="Marka auta"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"></TextView>
+
+    <ImageView
+        android:id="@+id/imageViewCijena"
+        android:layout_width="28dp"
+        android:layout_height="26dp"
+        android:layout_alignBottom="@+id/CijenaTxtP"
+        android:layout_alignStart="@+id/imageViewMarkaAuta"
+        app:srcCompat="@drawable/ic_attach_money_black_24dp" />
+
+    <TextView
+        android:id="@+id/CijenaTxtP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MarkaAutaTxtP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="100dp"
+        android:text="Cijena"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/imageViewDatumPocetka"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:layout_alignStart="@+id/imageViewMarkaAuta"
+        android:layout_alignBottom="@+id/DatumPocetkaTxtP"
+        app:srcCompat="@drawable/ic_date_range_black_24dp" />
+
+    <TextView
+        android:id="@+id/DatumPocetkaTxtP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CijenaTxtP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="100dp"
+        android:text="Datum pocetka"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/imageViewDatumZavrsetka"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:layout_alignBottom="@+id/DatumZavrsetkaTxtP"
+        android:layout_alignStart="@+id/imageViewMarkaAuta"
+        app:srcCompat="@drawable/ic_done_all_black_24dp" />
+
+    <TextView
+        android:id="@+id/DatumZavrsetkaTxtP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DatumPocetkaTxtP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="100dp"
+        android:text="Datum zavrsetka"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center" />
+
+
+    <Button
+        android:id="@+id/odbijBtn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        android:text="ODBIJ"/>
+
+    <Button
+        android:id="@+id/prihvatiBtn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:background="@android:color/holo_green_dark"
+        android:textColor="@android:color/white"
+        android:text="PRIHVATI"/>
+
+
+
+
+    </RelativeLayout>
+

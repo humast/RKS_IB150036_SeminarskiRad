@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/item1"
+        android:title="Pocetna"
+        android:icon="@drawable/ic_home_black_24dp">
+    </item>
+    <item
+        android:id="@+id/item2"
+        android:title="Novi upit"
+        android:icon="@drawable/ic_add_circle_black_24dp">
+    </item>
+    <item
+        android:id="@+id/item3"
+        android:title="Lista upita"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp">
+    </item>
+    <item
+        android:id="@+id/item4"
+        android:title="Odjava"
+        android:icon="@drawable/ic_assignment_return_black_24dp">
+    </item>
+    </group>
+</menu>

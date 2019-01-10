@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bijela"
+    tools:context=".MainActivity"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/autoservis" />
+
+    <EditText
+        android:id="@+id/txtUsername"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Korisničko ime"/>
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/txtUsername"
+        android:layout_marginTop="310dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Lozinka"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="316dp"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="164dp"
+        android:background="@color/narancasta"
+        android:text="Prijava"
+        android:textAlignment="center"
+        android:textColor="@color/bijela"
+        android:textSize="@dimen/fab_margin" />
+
+    <Button
+        android:id="@+id/btnRegistracija"
+        android:layout_width="316dp"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="96dp"
+        android:background="@color/narancasta"
+        android:text="Registracija"
+        android:textAlignment="center"
+        android:textColor="@color/bijela"
+        android:textSize="@dimen/fab_margin" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registracija">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="285dp"
+        android:layout_height="95dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_person_add_black_24dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="155dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="110dp"
+        android:layout_marginTop="152dp"
+        android:text="Registracija"
+        android:textColor="@color/narancasta"
+        android:textSize="25dp"
+        android:textStyle="bold"></TextView>
+
+
+    <EditText
+        android:id="@+id/imeInput"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="202dp"
+        android:ems="10"
+        android:hint="Ime"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/prezimeInput"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="240dp"
+        android:ems="10"
+        android:hint="Prezime"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/telefonInput"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="278dp"
+        android:ems="10"
+        android:hint="Telefon"
+      />
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="316dp"
+        android:ems="10"
+        android:hint="Email"
+       />
+
+
+    <EditText
+        android:id="@+id/korisnickoImeInput"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="180dp"
+        android:ems="10"
+        android:hint="Korisnicko ime"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/lozinkaInput"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="146dp"
+        android:ems="10"
+        android:hint="Lozinka"
+        android:inputType="textPersonName" />
+
+
+    <Button
+        android:id="@+id/registracijaBtn"
+        android:layout_width="320dp"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp"
+        android:text="Registruj se"
+        android:textSize="@dimen/fab_margin"
+        android:textAlignment="center"
+        android:textColor="@color/bijela"
+        android:background="@color/narancasta"/>
+
+
+</RelativeLayout>

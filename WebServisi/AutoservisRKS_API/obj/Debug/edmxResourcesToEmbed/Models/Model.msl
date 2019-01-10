@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AutoservisRKSModelStoreContainer" CdmEntityContainer="AutoservisRKSEntities">
+    <EntitySetMapping Name="AutorizacijskiToken">
+      <EntityTypeMapping TypeName="AutoservisRKSModel.AutorizacijskiToken">
+        <MappingFragment StoreEntitySet="AutorizacijskiToken">
+          <ScalarProperty Name="AutorizacijskiTokenID" ColumnName="AutorizacijskiTokenID" />
+          <ScalarProperty Name="Vrijednost" ColumnName="Vrijednost" />
+          <ScalarProperty Name="KlijentID" ColumnName="KlijentID" />
+          <ScalarProperty Name="VrijemeEvidentiranja" ColumnName="VrijemeEvidentiranja" />
+          <ScalarProperty Name="IpAdresa" ColumnName="IpAdresa" />
+          <ScalarProperty Name="DeviceInfo" ColumnName="DeviceInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klijenti">
+      <EntityTypeMapping TypeName="AutoservisRKSModel.Klijenti">
+        <MappingFragment StoreEntitySet="Klijenti">
+          <ScalarProperty Name="KlijentID" ColumnName="KlijentID" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="LozinkaSalt" ColumnName="LozinkaSalt" />
+          <ScalarProperty Name="LozinkaHash" ColumnName="LozinkaHash" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ponude">
+      <EntityTypeMapping TypeName="AutoservisRKSModel.Ponude">
+        <MappingFragment StoreEntitySet="Ponude">
+          <ScalarProperty Name="PonudaID" ColumnName="PonudaID" />
+          <ScalarProperty Name="MarkaAuta" ColumnName="MarkaAuta" />
+          <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+          <ScalarProperty Name="DatumPocetka" ColumnName="DatumPocetka" />
+          <ScalarProperty Name="DatumZavrsetka" ColumnName="DatumZavrsetka" />
+          <ScalarProperty Name="Prihvacen" ColumnName="Prihvacen" />
+          <ScalarProperty Name="Odgovoren" ColumnName="Odgovoren" />
+          <ScalarProperty Name="UpitID" ColumnName="UpitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upiti">
+      <EntityTypeMapping TypeName="AutoservisRKSModel.Upiti">
+        <MappingFragment StoreEntitySet="Upiti">
+          <ScalarProperty Name="UpitID" ColumnName="UpitID" />
+          <ScalarProperty Name="MarkaAuta" ColumnName="MarkaAuta" />
+          <ScalarProperty Name="PodaciOMotoru" ColumnName="PodaciOMotoru" />
+          <ScalarProperty Name="OpisKvara" ColumnName="OpisKvara" />
+          <ScalarProperty Name="KlijentID" ColumnName="KlijentID" />
+          <ScalarProperty Name="DatumSlanja" ColumnName="DatumSlanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetTokenPoVrijednosti" FunctionName="AutoservisRKSModel.Store.GetTokenPoVrijednosti" />
+  </EntityContainerMapping>
+</Mapping>
